@@ -3,7 +3,7 @@
 *{box-sizing:border-box;margin:0;touch-action:none;user-select:none;-webkit-user-select:none}
 :root{color-scheme:dark}
 html,body{height:100%;overflow:hidden;background:#0d1b2a;color:#eaf6ff;font-family:system-ui,'Segoe UI',sans-serif}
-#g{position:fixed;inset:0}
+#g{position:fixed;inset:0;width:var(--game-vw,100vw);height:var(--game-vh,100vh);height:var(--game-vh,100dvh)}
 .ov{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(#1b3d5e,#0d1b2a);z-index:5;overflow:auto;padding:16px;text-align:center}
 .ov[hidden]{display:none}#rotateHint{display:none;position:fixed;inset:0;z-index:20;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg,#07131ef5,#164044f5);text-align:center}
 #rotateHint .rotateCard{width:min(100%,360px);padding:24px;border:1px solid #7dffb088;border-radius:20px;background:#102b34;box-shadow:0 12px 36px #0009}
@@ -45,7 +45,7 @@ h2{z-index:1}
 .cd b{font-size:20px}.cd i{font-style:normal;background:var(--c);color:#111;border-radius:8px;padding:1px 8px;font-size:12px;margin-left:6px}
 .st{display:flex;align-items:center;gap:6px;font-size:12px;margin:3px 0}.st span{width:52px}.st u{height:8px;flex:1;background:#0006;border-radius:4px;overflow:hidden;text-decoration:none}.st u s{display:block;height:100%;background:var(--c)}
 .cd p{font-size:11.5px;line-height:1.35;margin-top:4px;color:#cfe3f5}
-#hud{position:fixed;inset:0;pointer-events:none;z-index:2}
+#hud{position:fixed;inset:0;width:var(--game-vw,100vw);height:var(--game-vh,100vh);height:var(--game-vh,100dvh);pointer-events:none;z-index:2}
 #hud[hidden]{display:none}
 #top{position:absolute;top:calc(6px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);background:#000a;border-radius:20px;padding:4px 18px;font-weight:800;font-size:18px;white-space:nowrap}
 #feed{position:absolute;top:calc(46px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;font-size:13px;font-weight:600}
@@ -62,7 +62,7 @@ h2{z-index:1}
 #jb{position:absolute;width:120px;height:120px;border-radius:50%;border:3px solid #fff5;background:#fff1;display:none}
 #jk{position:absolute;left:35px;top:35px;width:50px;height:50px;border-radius:50%;background:#fff8}
 @media(pointer:fine) and (min-width:901px) and (min-height:651px){#jz{display:none}}
-#sb{width:54px;height:54px;left:calc(8px + env(safe-area-inset-left,0px));top:calc(112px + env(safe-area-inset-top,0px))}
+#sb{width:54px;height:54px;left:calc(8px + env(safe-area-inset-left,0px));top:calc(112px + env(safe-area-inset-top,0px))}#fs{width:52px;height:52px;left:calc(8px + env(safe-area-inset-left,0px));top:calc(146px + env(safe-area-inset-top,0px));background:#142b43dd;font-size:19px;z-index:3}#fs small{font-size:8px}
 #sx{position:absolute;bottom:calc(6px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);display:flex;gap:12px;background:#000a;border-radius:12px;padding:4px 8px}
 #sx div{text-align:center;font-size:10px}
 #sx i{display:inline-flex;width:34px;height:34px;margin:0 2px;border:2px solid #fff6;border-radius:8px;background:#0007;font-style:normal;font-size:20px;align-items:center;justify-content:center}
@@ -79,7 +79,7 @@ h2{z-index:1}
 <div id="me"><b id="mn"></b> <span id="ml"></span> · <span id="mg"></span><div class="br"><s id="hp" style="background:#3be26b"></s></div><div class="br"><s id="mp" style="background:#46a7ff"></s></div><div id="bf" style="margin-top:3px"></div></div>
 <canvas id="mm" width="170" height="91"></canvas>
 <div id="jz"><div id="jb"><div id="jk"></div></div></div>
-<div class="cb" id="ba">J<small>Đánh</small></div><div class="cb" id="b1">K<small>Kỹ năng</small></div><div class="cb" id="bu">L<small>Chiêu cuối</small></div><div class="cb" id="sb">🛒<small>Shop (B)</small></div><div id="sx"></div><div id="en"></div><div id="dt"></div><div id="shop" hidden></div>
+<div class="cb" id="ba">J<small>Đánh</small></div><div class="cb" id="b1">K<small>Kỹ năng</small></div><div class="cb" id="bu">L<small>Chiêu cuối</small></div><div class="cb" id="sb">🛒<small>Shop (B)</small></div><div class="cb" id="fs">⛶<small>Toàn màn hình</small></div><div id="sx"></div><div id="en"></div><div id="dt"></div><div id="shop" hidden></div>
 </div>
 <div class="ov" id="menu"><div class="bl" style="--c:#46a7ff;width:90px;height:75px;left:8%;top:18%"></div><div class="bl" style="--c:#ff8c42;width:120px;height:100px;right:9%;top:22%;animation-delay:.5s"></div><div class="bl" style="--c:#b46bff;width:70px;height:58px;left:16%;bottom:14%;animation-delay:1s"></div><div class="bl" style="--c:#7dffb0;width:100px;height:84px;right:16%;bottom:12%;animation-delay:.3s"></div>
 <h1>Slime Đại Chiến</h1><button class="bt" id="play">▶ Bắt đầu</button></div>
@@ -89,8 +89,8 @@ h2{z-index:1}
 const $=i=>document.getElementById(i),W=3000,H=1600,LY=800,WX=600,TM=['#3da5ff','#ff5a5a'];
 const cv=$('g'),cx=cv.getContext('2d'),mx=$('mm').getContext('2d');
 let vw,vh,Z=1,E=[],P=[],F=[],G,me,bot,HR,bs=[],keys={},joy={x:0,y:0},bA=0,run=0,last=0,camX=0,camY=0,mt=0,pickHero='nam',pickOpponent='khoa',gameMode='';
-function rs(){const d=devicePixelRatio||1;vw=innerWidth;vh=innerHeight;cv.width=vw*d;cv.height=vh*d;cx.setTransform(d,0,0,d,0,0);const touch=matchMedia('(pointer: coarse)').matches||navigator.maxTouchPoints>0||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||Math.min(vw,vh)<650;if(touch){Z=vh>vw?Math.max(.35,Math.min(.52,vw/950)):Math.min(.38,Math.max(.30,Math.min(vw/3000,vh/1600)*1.35))}else Z=Math.max(.7,Math.min(vw,vh)/640)}
-addEventListener('resize',rs);rs();
+function enterFullscreen(){const root=document.documentElement;if(document.fullscreenElement||document.webkitFullscreenElement)return;const req=root.requestFullscreen||root.webkitRequestFullscreen;if(!req)return;try{const p=req.call(root);if(p&&p.catch)p.catch(()=>{})}catch{}}function toggleFullscreen(){if(document.fullscreenElement||document.webkitFullscreenElement){const exit=document.exitFullscreen||document.webkitExitFullscreen;if(exit)try{exit.call(document)}catch{}}else enterFullscreen()}function rs(){const d=devicePixelRatio||1;const vv=window.visualViewport;vw=Math.round(vv?vv.width:innerWidth);vh=Math.round(vv?vv.height:innerHeight);document.documentElement.style.setProperty('--game-vw',vw+'px');document.documentElement.style.setProperty('--game-vh',vh+'px');cv.width=vw*d;cv.height=vh*d;cx.setTransform(d,0,0,d,0,0);const touch=matchMedia('(pointer: coarse)').matches||navigator.maxTouchPoints>0||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||Math.min(vw,vh)<650;if(touch){Z=vh>vw?Math.max(.35,Math.min(.52,vw/950)):Math.min(.38,Math.max(.30,Math.min(vw/3000,vh/1600)*1.35))}else Z=Math.max(.7,Math.min(vw,vh)/640)}
+addEventListener('resize',rs);if(window.visualViewport){visualViewport.addEventListener('resize',rs);visualViewport.addEventListener('scroll',rs)}document.addEventListener('fullscreenchange',rs);rs();
 const HD={
 nam:{n:'Nam',role:'Xạ thủ',col:'#46a7ff',hp:700,atk:70,sp:235,rg:320,cd:.8,r:17,st:[2,5,3],k1:'Tăng tốc đánh',k2:'Mũi tên năng lượng',d:'Bắn tên xuyên thấu tầm xa. K: tăng tốc đánh 4s. L: mũi tên năng lượng tầm cực xa, xuyên thấu, sát thương diện rộng.'},
 khoa:{n:'Khoa',role:'Đấu sĩ',col:'#ff8c42',hp:1250,atk:58,sp:210,rg:90,cd:.6,r:20,st:[5,3,2],k1:'Chém ngang',k2:'Xoay kiếm',d:'Cận chiến, máu trâu. K: chém ngang một nhát lớn + tạo giáp. L: xoay kiếm diện rộng.'},
@@ -302,8 +302,8 @@ $('b1').firstChild.textContent=me.c1>0?Math.ceil(me.c1):'K';$('bu').firstChild.t
 function loop(n){const dt=Math.min(.05,(n-last)/1000);last=n;if(run&&!G.over)upd(dt);draw(n);if(run)hud();mt=n/1000;menuDraw();requestAnimationFrame(loop)}
 function menuDraw(){document.querySelectorAll('.cd canvas').forEach(c=>{const g=c.getContext('2d'),id=c.dataset.id;g.clearRect(0,0,130,100);const mage=id=='nva_mage';slime(g,60,mage?69:52,mage?23:30,HD[id].col,-.2+Math.sin(mt*2)*.2,id,mt)})}
 function buildCards(wrapId,kind){const wrap=$(wrapId);for(const id in HD){const d=HD[id],e=document.createElement('div');e.className='cd'+((kind=='hero'?id==pickHero:id==pickOpponent)?' sel':'');e.dataset.id=id;e.style.setProperty('--c',d.col);e.innerHTML='<canvas width="130" height="100" data-id="'+id+'"></canvas><b>'+d.n+'</b><i>'+d.role+'</i>'+['HP','Attack','Speed'].map((l,i)=>'<div class="st"><span>'+l+'</span><u><s style="width:'+d.st[i]*20+'%"></s></u></div>').join('')+'<p><b>K · '+d.k1+'</b> / <b>L · '+d.k2+'</b><br>'+d.d+'</p>';e.onclick=()=>{if(kind=='hero'){pickHero=id;gameMode='';$('oppSection').hidden=true;$('startFight').hidden=true;document.querySelectorAll('.mbt').forEach(b=>b.classList.remove('sel'));$('modePick').scrollIntoView({behavior:'smooth',block:'nearest'})}else pickOpponent=id;$('cards').querySelectorAll('.cd').forEach(c=>c.classList.toggle('sel',c.dataset.id==pickHero));$('opponents').querySelectorAll('.cd').forEach(c=>c.classList.toggle('sel',c.dataset.id==pickOpponent))};wrap.appendChild(e)}}
-function chooseMode(m){gameMode=m;$('mode1').classList.toggle('sel',m=='1v1');$('mode3').classList.toggle('sel',m=='3v3');$('oppSection').hidden=false;$('startFight').hidden=false;$('modeHelp').textContent=m=='3v3'?'Mỗi đội có 2 đồng minh máy; có thêm 6 bãi quái rừng.':'Trận đấu đơn giữa bạn và một tướng máy.';$('oppSection').scrollIntoView({behavior:'smooth',block:'nearest'})}buildCards('cards','hero');buildCards('opponents','opponent');$('mode1').onclick=()=>chooseMode('1v1');$('mode3').onclick=()=>chooseMode('3v3');$('startFight').onclick=()=>start(pickHero,pickOpponent,gameMode);
-$('play').onclick=()=>{$('menu').hidden=true;$('pick').hidden=false};
+function chooseMode(m){gameMode=m;$('mode1').classList.toggle('sel',m=='1v1');$('mode3').classList.toggle('sel',m=='3v3');$('oppSection').hidden=false;$('startFight').hidden=false;$('modeHelp').textContent=m=='3v3'?'Mỗi đội có 2 đồng minh máy; có thêm 6 bãi quái rừng.':'Trận đấu đơn giữa bạn và một tướng máy.';$('oppSection').scrollIntoView({behavior:'smooth',block:'nearest'})}buildCards('cards','hero');buildCards('opponents','opponent');$('mode1').onclick=()=>chooseMode('1v1');$('mode3').onclick=()=>chooseMode('3v3');$('startFight').onclick=()=>{enterFullscreen();start(pickHero,pickOpponent,gameMode)};$('fs').onclick=toggleFullscreen;document.addEventListener('fullscreenchange',()=>{$('fs').firstChild.textContent=document.fullscreenElement?'⤢':'⛶';$('fs').querySelector('small').textContent=document.fullscreenElement?'Thoát':'Toàn màn hình';rs()});
+$('play').onclick=()=>{enterFullscreen();$('menu').hidden=true;$('pick').hidden=false};
 $('again').onclick=()=>{run=0;$('end').hidden=true;$('hud').hidden=true;$('pick').hidden=false};
 addEventListener('keydown',e=>{const k=e.key.toLowerCase();keys[k]=1;if(k=='b'&&run)toggleShop();if(run&&!G.over&&!me.dead){if(k=='k')sk1(me);if(k=='l')ult(me)}if(k.startsWith('arrow')||' '==k)e.preventDefault()});
 addEventListener('keyup',e=>keys[e.key.toLowerCase()]=0);
