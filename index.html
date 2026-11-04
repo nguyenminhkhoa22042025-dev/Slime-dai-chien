@@ -89,7 +89,7 @@ h2{z-index:1}
 const $=i=>document.getElementById(i),W=3000,H=1600,LY=800,WX=600,TM=['#3da5ff','#ff5a5a'];
 const cv=$('g'),cx=cv.getContext('2d'),mx=$('mm').getContext('2d');
 let vw,vh,Z=1,E=[],P=[],F=[],G,me,bot,HR,bs=[],keys={},joy={x:0,y:0},bA=0,run=0,last=0,camX=0,camY=0,mt=0,pickHero='nam',pickOpponent='khoa',gameMode='';
-function rs(){const d=devicePixelRatio||1;vw=innerWidth;vh=innerHeight;cv.width=vw*d;cv.height=vh*d;cx.setTransform(d,0,0,d,0,0);const touch=matchMedia('(pointer: coarse)').matches||navigator.maxTouchPoints>0;Z=Math.max(touch ? .55 : .7,Math.min(vw,vh)/(touch ? 860 : 640))}
+function rs(){const d=devicePixelRatio||1;vw=innerWidth;vh=innerHeight;cv.width=vw*d;cv.height=vh*d;cx.setTransform(d,0,0,d,0,0);const touch=matchMedia('(pointer: coarse)').matches||navigator.maxTouchPoints>0;Z=touch?Math.min(.42,Math.max(.24,Math.min(vw/3000,vh/1440))):Math.max(.7,Math.min(vw,vh)/640)}
 addEventListener('resize',rs);rs();
 const HD={
 nam:{n:'Nam',role:'Xạ thủ',col:'#46a7ff',hp:700,atk:70,sp:235,rg:320,cd:.8,r:17,st:[2,5,3],k1:'Tăng tốc đánh',k2:'Mũi tên năng lượng',d:'Bắn tên xuyên thấu tầm xa. K: tăng tốc đánh 4s. L: mũi tên năng lượng tầm cực xa, xuyên thấu, sát thương diện rộng.'},
